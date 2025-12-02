@@ -455,11 +455,21 @@ table {
   padding: 25px 54px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  font-size: 20px;
   border-radius: 5px;
   background: #D52027;
   top: 550px;
   left: 150px;
+  box-shadow: 5px 5px 5px red;
+  color: white;
+  border: none;
+}
+.content .left-wrapper .btn-box:hover {
+  color: #D52027;
+  font-size: 22px;
+  background-color: white;
+  transiton: 0.3s;
+  cursor: pointer;
 }
 .content .right-wrapper {
   position: relative;
@@ -597,10 +607,32 @@ table {
   font-weight: 600;
 }
 .four-section .four-section-scrolling {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
   display: flex;
-  flex-direction: row;
-  overflow-y: scroll;
-  justify-content: space-between 15px;
+}
+.four-section .four-section-scrolling .carousel-track {
+  display: flex;
+  gap: 20px;
+  width: -moz-max-content;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+.four-section .four-section-scrolling .carousel-track:hover {
+  animation-play-state: paused;
+}
+.four-section .four-section-scrolling .four-section-scrolling__cards {
+  flex-shrink: 0;
+  width: 250px;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 .four-section .four-section-scrolling::-webkit-scrollbar {
   display: none;
